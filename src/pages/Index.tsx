@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import { ArrowRight, MapPin, Phone, Clock, Search, Bell, Settings } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -79,16 +78,8 @@ const Index = () => {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto">
+            <div className="grid grid-cols-1 gap-8 max-w-2xl mx-auto">
               <div className="text-center animate-fade-in">
-                <div className="text-3xl font-bold">50K+</div>
-                <div className="text-sm text-muted-foreground">Verified Services</div>
-              </div>
-              <div className="text-center animate-fade-in" style={{animationDelay: '0.1s'}}>
-                <div className="text-3xl font-bold">1000+</div>
-                <div className="text-sm text-muted-foreground">Villages Covered</div>
-              </div>
-              <div className="text-center animate-fade-in" style={{animationDelay: '0.2s'}}>
                 <div className="text-3xl font-bold">24/7</div>
                 <div className="text-sm text-muted-foreground">Emergency Support</div>
               </div>
