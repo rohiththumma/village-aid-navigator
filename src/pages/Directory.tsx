@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Search, MapPin, Phone, Clock, Bell, Settings, Filter } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -174,8 +175,8 @@ const Directory = () => {
             </Button>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-in">
-            {filteredServices.map((service, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredServices.map((service) => (
               <Card
                 key={service.id}
                 className="group hover:shadow-lg transition-all duration-300 hover:scale-[1.02]"
