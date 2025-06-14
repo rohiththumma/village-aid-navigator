@@ -1,7 +1,8 @@
 
-import { MapPin, Phone, Search, Bell, Settings, Clock, Users, Shield, Zap, Globe, Heart, Smartphone } from 'lucide-react';
+import { MapPin, Phone, Search, Bell, Settings, Clock, Users, Shield, Zap, Globe, Heart, Smartphone, Star, CheckCircle, ArrowRight, PlayCircle, Award, TrendingUp, MessageCircle } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 
 const Features = () => {
   const mainFeatures = [
@@ -95,13 +96,73 @@ const Features = () => {
     }
   ];
 
+  const testimonials = [
+    {
+      name: 'Rajesh Kumar',
+      location: 'Village Rampur',
+      rating: 5,
+      text: 'Village Assistant saved my day when my tractor broke down during harvest season. Found a mechanic within minutes!',
+      avatar: '👨‍🌾'
+    },
+    {
+      name: 'Priya Sharma',
+      location: 'Village Greenfield',
+      rating: 5,
+      text: 'The offline mode is incredible. Even without internet, I could access emergency contacts when my child fell sick.',
+      avatar: '👩‍⚕️'
+    },
+    {
+      name: 'Mohammed Ali',
+      location: 'Village Sunset',
+      rating: 5,
+      text: 'Local language support made it so easy to communicate with service providers. Truly built for our community.',
+      avatar: '🧑‍🔧'
+    }
+  ];
+
+  const useCases = [
+    {
+      icon: Zap,
+      title: 'Medical Emergency',
+      scenario: 'Family member needs immediate medical attention',
+      solution: 'One-tap call to nearest clinic + AI-generated emergency message in local language',
+      time: '< 30 seconds'
+    },
+    {
+      icon: Settings,
+      title: 'Vehicle Breakdown',
+      scenario: 'Tractor or vehicle breaks down in remote area',
+      solution: 'GPS location sharing + verified mechanic contacts + service history',
+      time: '< 2 minutes'
+    },
+    {
+      icon: Heart,
+      title: 'Community Help',
+      scenario: 'Need local services or recommendations',
+      solution: 'Community directory + ratings + real-time availability',
+      time: '< 1 minute'
+    }
+  ];
+
+  const comparisonFeatures = [
+    { feature: 'GPS Location Detection', village: true, others: false },
+    { feature: 'Offline Mode', village: true, others: false },
+    { feature: 'Local Language Support', village: true, others: false },
+    { feature: 'Community Verification', village: true, others: false },
+    { feature: 'One-tap Emergency Call', village: true, others: true },
+    { feature: 'Real-time Updates', village: true, others: true }
+  ];
+
   return (
     <div className="min-h-screen py-20">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16 animate-in">
+          <Badge className="mb-4 bg-primary/10 text-primary hover:bg-primary/20">
+            🚀 Powerful Features
+          </Badge>
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Powerful Features for Every Emergency
+            Everything You Need in One App
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Village Assistant is packed with intelligent features designed to help you find 
@@ -112,7 +173,7 @@ const Features = () => {
         {/* Main Features */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16 stagger-in">
           {mainFeatures.map((feature, index) => (
-            <Card key={index} className="group hover:shadow-lg transition-all duration-300 hover:scale-[1.02]">
+            <Card key={index} className="group hover:shadow-lg transition-all duration-300 hover:scale-[1.02] border-l-4 border-l-primary">
               <CardHeader>
                 <div className="flex items-center space-x-4 mb-4">
                   <div className="p-3 rounded-lg bg-primary text-primary-foreground group-hover:scale-110 transition-transform duration-200">
@@ -135,6 +196,109 @@ const Features = () => {
           ))}
         </div>
 
+        {/* Use Cases Section */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-center mb-12">Real-World Use Cases</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {useCases.map((useCase, index) => (
+              <Card key={index} className="relative overflow-hidden group hover:shadow-xl transition-all duration-300">
+                <div className="absolute top-0 right-0 bg-gradient-to-bl from-primary/10 to-transparent w-32 h-32"></div>
+                <CardHeader>
+                  <div className="flex items-center justify-between mb-4">
+                    <useCase.icon className="h-8 w-8 text-primary" />
+                    <Badge variant="outline" className="text-xs">{useCase.time}</Badge>
+                  </div>
+                  <CardTitle className="text-xl mb-2">{useCase.title}</CardTitle>
+                  <p className="text-sm text-muted-foreground">{useCase.scenario}</p>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    <div className="flex items-start space-x-2">
+                      <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                      <p className="text-sm">{useCase.solution}</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Feature Comparison Card */}
+        <div className="mb-16">
+          <Card className="bg-gradient-to-br from-secondary/5 via-background to-primary/5">
+            <CardHeader className="text-center">
+              <Badge className="w-fit mx-auto mb-4 bg-gradient-to-r from-primary to-secondary text-white">
+                🥇 COMPARISON
+              </Badge>
+              <CardTitle className="text-3xl mb-4">Village Assistant vs Others</CardTitle>
+              <p className="text-xl text-muted-foreground">
+                See why we're the preferred choice for rural communities
+              </p>
+            </CardHeader>
+            <CardContent className="max-w-4xl mx-auto">
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-4 font-semibold">Features</th>
+                      <th className="text-center py-4 font-semibold text-primary">Village Assistant</th>
+                      <th className="text-center py-4 font-semibold text-muted-foreground">Others</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {comparisonFeatures.map((item, index) => (
+                      <tr key={index} className="border-b last:border-b-0 hover:bg-muted/50 transition-colors">
+                        <td className="py-3">{item.feature}</td>
+                        <td className="text-center py-3">
+                          {item.village ? (
+                            <CheckCircle className="h-5 w-5 text-green-500 mx-auto" />
+                          ) : (
+                            <span className="text-muted-foreground">—</span>
+                          )}
+                        </td>
+                        <td className="text-center py-3">
+                          {item.others ? (
+                            <CheckCircle className="h-5 w-5 text-green-500 mx-auto" />
+                          ) : (
+                            <span className="text-muted-foreground">—</span>
+                          )}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Testimonials Section */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-center mb-12">What Our Community Says</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <Card key={index} className="relative group hover:shadow-lg transition-all duration-300">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    <div className="text-3xl mr-3">{testimonial.avatar}</div>
+                    <div>
+                      <h4 className="font-semibold">{testimonial.name}</h4>
+                      <p className="text-sm text-muted-foreground">{testimonial.location}</p>
+                    </div>
+                  </div>
+                  <div className="flex mb-3">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                    ))}
+                  </div>
+                  <p className="text-sm text-muted-foreground italic">"{testimonial.text}"</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+
         {/* Innovative Features Highlight */}
         <div className="mb-16">
           <Card className="bg-gradient-to-br from-primary/10 via-background to-secondary/10 border-primary/20">
@@ -150,8 +314,8 @@ const Features = () => {
             <CardContent className="max-w-4xl mx-auto">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {innovativeFeatures.map((feature, index) => (
-                  <div key={index} className="flex items-start space-x-3 p-4 rounded-lg bg-background/50 hover:bg-background/80 transition-colors">
-                    <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+                  <div key={index} className="flex items-start space-x-3 p-4 rounded-lg bg-background/50 hover:bg-background/80 transition-colors group">
+                    <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0 group-hover:scale-150 transition-transform"></div>
                     <div>
                       <h4 className="font-semibold mb-2">{feature.title}</h4>
                       <p className="text-sm text-muted-foreground">{feature.description}</p>
@@ -163,7 +327,7 @@ const Features = () => {
           </Card>
         </div>
 
-        {/* NEW FEATURE Highlight */}
+        {/* Community Feature */}
         <div className="mb-16">
           <Card className="bg-gradient-to-r from-secondary/5 via-background to-secondary/5 border-secondary/20">
             <CardHeader className="text-center">
@@ -179,23 +343,29 @@ const Features = () => {
             <CardContent className="max-w-4xl mx-auto">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-4">
-                  <h4 className="text-lg font-semibold">What You Can Add:</h4>
+                  <h4 className="text-lg font-semibold flex items-center">
+                    <MessageCircle className="h-5 w-5 mr-2 text-primary" />
+                    What You Can Add:
+                  </h4>
                   <ul className="space-y-2 text-muted-foreground">
-                    <li>• Shop Name & Contact Details</li>
-                    <li>• Service Type (Garage, Clinic, Grocery, etc.)</li>
-                    <li>• Location Information & Photos</li>
-                    <li>• Operating Hours & Special Services</li>
-                    <li>• Emergency Contact Information</li>
+                    <li className="flex items-center"><CheckCircle className="h-4 w-4 text-green-500 mr-2" /> Shop Name & Contact Details</li>
+                    <li className="flex items-center"><CheckCircle className="h-4 w-4 text-green-500 mr-2" /> Service Type (Garage, Clinic, Grocery, etc.)</li>
+                    <li className="flex items-center"><CheckCircle className="h-4 w-4 text-green-500 mr-2" /> Location Information & Photos</li>
+                    <li className="flex items-center"><CheckCircle className="h-4 w-4 text-green-500 mr-2" /> Operating Hours & Special Services</li>
+                    <li className="flex items-center"><CheckCircle className="h-4 w-4 text-green-500 mr-2" /> Emergency Contact Information</li>
                   </ul>
                 </div>
                 <div className="space-y-4">
-                  <h4 className="text-lg font-semibold">Quality Assurance:</h4>
+                  <h4 className="text-lg font-semibold flex items-center">
+                    <Shield className="h-5 w-5 mr-2 text-primary" />
+                    Quality Assurance:
+                  </h4>
                   <ul className="space-y-2 text-muted-foreground">
-                    <li>• Admin moderation & verification</li>
-                    <li>• Community ratings & reviews</li>
-                    <li>• Regular accuracy updates</li>
-                    <li>• Spam & fraud protection</li>
-                    <li>• Local moderator network</li>
+                    <li className="flex items-center"><Award className="h-4 w-4 text-blue-500 mr-2" /> Admin moderation & verification</li>
+                    <li className="flex items-center"><Star className="h-4 w-4 text-yellow-500 mr-2" /> Community ratings & reviews</li>
+                    <li className="flex items-center"><TrendingUp className="h-4 w-4 text-green-500 mr-2" /> Regular accuracy updates</li>
+                    <li className="flex items-center"><Shield className="h-4 w-4 text-red-500 mr-2" /> Spam & fraud protection</li>
+                    <li className="flex items-center"><Users className="h-4 w-4 text-purple-500 mr-2" /> Local moderator network</li>
                   </ul>
                 </div>
               </div>
@@ -208,7 +378,7 @@ const Features = () => {
           <h2 className="text-3xl font-bold text-center mb-12">Advanced Capabilities</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-in">
             {additionalFeatures.map((feature, index) => (
-              <Card key={index} className="text-center group hover:shadow-lg transition-all duration-300 hover:scale-105">
+              <Card key={index} className="text-center group hover:shadow-lg transition-all duration-300 hover:scale-105 border-t-4 border-t-primary">
                 <CardContent className="p-8">
                   <div className="p-4 rounded-full bg-primary text-primary-foreground w-fit mx-auto mb-4 group-hover:scale-110 transition-transform duration-200">
                     <feature.icon className="h-8 w-8" />
@@ -221,7 +391,25 @@ const Features = () => {
           </div>
         </div>
 
-        {/* Feature Showcase */}
+        {/* Interactive Demo Card */}
+        <div className="mb-16">
+          <Card className="bg-gradient-to-r from-primary/5 to-secondary/5 border border-primary/20">
+            <CardContent className="p-8 text-center">
+              <PlayCircle className="h-16 w-16 mx-auto mb-6 text-primary" />
+              <h3 className="text-2xl font-bold mb-4">See Village Assistant in Action</h3>
+              <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+                Watch our interactive demo to see how easy it is to find help in your village. 
+                Experience the app before you download it.
+              </p>
+              <Button className="group">
+                Watch Demo
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Feature Showcase Stats */}
         <div className="bg-gradient-to-r from-muted/30 to-muted/10 rounded-2xl p-8 md:p-12 text-center">
           <h2 className="text-3xl font-bold mb-6">Why Choose Village Assistant?</h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
