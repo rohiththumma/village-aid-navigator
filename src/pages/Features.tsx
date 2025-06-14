@@ -1,4 +1,3 @@
-
 import { MapPin, Phone, Search, Bell, Settings, Clock, Users, Shield } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -159,11 +158,7 @@ const Features = () => {
         {/* Feature Showcase */}
         <div className="bg-muted/30 rounded-2xl p-8 md:p-12 text-center">
           <h2 className="text-3xl font-bold mb-6">Why Choose Village Assistant?</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="space-y-2">
-              <div className="text-3xl font-bold text-primary">15+</div>
-              <div className="text-sm text-muted-foreground">Languages Supported</div>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-1 gap-8">
             <div className="space-y-2">
               <div className="text-3xl font-bold text-primary">24/7</div>
               <div className="text-sm text-muted-foreground">Emergency Support</div>
