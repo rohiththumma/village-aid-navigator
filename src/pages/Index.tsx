@@ -1,3 +1,4 @@
+
 import { Link } from 'react-router-dom';
 import { ArrowRight, MapPin, Phone, Clock, Search, Bell, Settings } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -41,27 +42,27 @@ const Index = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-b from-background to-muted/20">
-        <div className="container mx-auto px-4 py-20 lg:py-32">
+        <div className="container mx-auto px-4 py-12 lg:py-16">
           <div className="max-w-4xl mx-auto text-center animate-in">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
               <span className="block">Instant Village Help,</span>
               <span className="block text-muted-foreground">Wherever You Are</span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-muted-foreground mb-6 max-w-3xl mx-auto">
               Your location-based guide to local emergency services. Connect with mechanics, 
               medical shops, clinics, and trusted helpers in any village.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-8">
               <Button
                 asChild
                 size="lg"
-                className="pulse-button text-lg px-8 py-4 rounded-full"
+                className="pulse-button text-base px-6 py-3 rounded-full w-full sm:w-auto"
               >
                 <Link to="/directory">
                   🚀 Launch App
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
               
@@ -69,7 +70,7 @@ const Index = () => {
                 asChild
                 variant="outline"
                 size="lg"
-                className="text-lg px-8 py-4 rounded-full hover:bg-destructive hover:text-destructive-foreground hover:border-destructive transition-all duration-300"
+                className="text-base px-6 py-3 rounded-full hover:bg-destructive hover:text-destructive-foreground hover:border-destructive transition-all duration-300 w-full sm:w-auto"
               >
                 <Link to="/emergency">
                   📞 Emergency Help Now
@@ -78,9 +79,9 @@ const Index = () => {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-1 gap-8 max-w-2xl mx-auto">
+            <div className="grid grid-cols-1 gap-4 max-w-lg mx-auto">
               <div className="text-center animate-fade-in">
-                <div className="text-3xl font-bold">24/7</div>
+                <div className="text-2xl font-bold">24/7</div>
                 <div className="text-sm text-muted-foreground">Emergency Support</div>
               </div>
             </div>
@@ -89,31 +90,31 @@ const Index = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-12 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold mb-3">
               Powerful Features for Every Emergency
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Built specifically for travelers and locals who need quick access to essential services.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-in">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 stagger-in">
             {features.map((feature, index) => (
               <Card
                 key={index}
-                className="group hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer"
+                className="group hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer h-full"
               >
-                <CardContent className="p-6">
-                  <div className="flex items-center space-x-4 mb-4">
-                    <div className="p-3 rounded-lg bg-primary text-primary-foreground group-hover:scale-110 transition-transform duration-200">
-                      <feature.icon className="h-6 w-6" />
+                <CardContent className="p-4 md:p-5 h-full flex flex-col">
+                  <div className="flex items-center space-x-3 mb-3">
+                    <div className="p-2 rounded-lg bg-primary text-primary-foreground group-hover:scale-110 transition-transform duration-200 flex-shrink-0">
+                      <feature.icon className="h-5 w-5" />
                     </div>
-                    <h3 className="text-xl font-semibold">{feature.title}</h3>
+                    <h3 className="text-lg font-semibold">{feature.title}</h3>
                   </div>
-                  <p className="text-muted-foreground">{feature.description}</p>
+                  <p className="text-muted-foreground text-sm flex-grow">{feature.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -122,31 +123,31 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20">
+      <section className="py-12">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">
               Ready to Get Started?
             </h2>
-            <p className="text-xl text-muted-foreground mb-8">
+            <p className="text-lg text-muted-foreground mb-6">
               Join thousands of travelers who trust Village Assistant for their emergency needs.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Button
                 asChild
                 size="lg"
-                className="text-lg px-8 py-4 rounded-full"
+                className="text-base px-6 py-3 rounded-full w-full sm:w-auto"
               >
                 <Link to="/directory">
                   Explore Directory
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
               <Button
                 asChild
                 variant="outline"
                 size="lg"
-                className="text-lg px-8 py-4 rounded-full"
+                className="text-base px-6 py-3 rounded-full w-full sm:w-auto"
               >
                 <Link to="/add-service">
                   Add Your Service
