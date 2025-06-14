@@ -11,42 +11,48 @@ const Index = () => {
       title: 'GPS Auto Location',
       description: 'Instantly detect your location and find nearby services in any village.',
       color: 'text-blue-500',
-      bgColor: 'bg-blue-50 dark:bg-blue-950'
+      bgColor: 'bg-blue-50 dark:bg-blue-950',
+      link: '/directory'
     },
     {
       icon: Phone,
       title: 'One-tap Call',
       description: 'Direct calling to emergency services with saved contact information.',
       color: 'text-green-500',
-      bgColor: 'bg-green-50 dark:bg-green-950'
+      bgColor: 'bg-green-50 dark:bg-green-950',
+      link: '/emergency'
     },
     {
       icon: Clock,
       title: '24/7 Availability',
       description: 'Access emergency help anytime, anywhere, even in remote areas.',
       color: 'text-orange-500',
-      bgColor: 'bg-orange-50 dark:bg-orange-950'
+      bgColor: 'bg-orange-50 dark:bg-orange-950',
+      link: '/emergency'
     },
     {
       icon: Search,
       title: 'Smart Search',
       description: 'AI-powered search to find exactly what you need in seconds.',
       color: 'text-purple-500',
-      bgColor: 'bg-purple-50 dark:bg-purple-950'
+      bgColor: 'bg-purple-50 dark:bg-purple-950',
+      link: '/directory'
     },
     {
       icon: Bell,
       title: 'Offline Mode',
       description: 'Essential features work even without internet connectivity.',
       color: 'text-red-500',
-      bgColor: 'bg-red-50 dark:bg-red-950'
+      bgColor: 'bg-red-50 dark:bg-red-950',
+      link: '/features'
     },
     {
       icon: Settings,
       title: 'Multi-language',
       description: 'Communicate with locals in their preferred language.',
       color: 'text-indigo-500',
-      bgColor: 'bg-indigo-50 dark:bg-indigo-950'
+      bgColor: 'bg-indigo-50 dark:bg-indigo-950',
+      link: '/features'
     },
   ];
 
@@ -125,18 +131,17 @@ const Index = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <Card
-                key={index}
-                className="group hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer h-full"
-              >
-                <CardContent className="p-8 h-full flex flex-col">
-                  <div className={`p-4 rounded-lg ${feature.bgColor} w-fit mb-6 group-hover:scale-110 transition-transform duration-200`}>
-                    <feature.icon className={`h-8 w-8 ${feature.color}`} />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-                  <p className="text-muted-foreground flex-grow">{feature.description}</p>
-                </CardContent>
-              </Card>
+              <Link key={index} to={feature.link} className="block">
+                <Card className="group hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer h-full">
+                  <CardContent className="p-8 h-full flex flex-col">
+                    <div className={`p-4 rounded-lg ${feature.bgColor} w-fit mb-6 group-hover:scale-110 transition-transform duration-200`}>
+                      <feature.icon className={`h-8 w-8 ${feature.color}`} />
+                    </div>
+                    <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
+                    <p className="text-muted-foreground flex-grow">{feature.description}</p>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>
