@@ -18,10 +18,10 @@ const Features = () => {
         <MainFeatures />
         <UseCases />
         <FeatureComparison />
-        <Testimonials />
         <InnovativeFeatures />
         <CommunityFeature />
         <AdditionalFeatures />
+        <Testimonials />
         <InteractiveDemo />
         <FeatureStats />
       </div>
