@@ -57,21 +57,6 @@ const Index = () => {
     { number: '1000+', label: 'Villages Covered', icon: MapPin }
   ];
 
-  const testimonials = [
-    {
-      text: "Village Assistant saved my day when my tractor broke down during harvest season!",
-      author: "Rajesh Kumar",
-      location: "Village Rampur",
-      rating: 5
-    },
-    {
-      text: "The offline mode is incredible. Even without internet, I could access emergency contacts.",
-      author: "Priya Sharma", 
-      location: "Village Greenfield",
-      rating: 5
-    }
-  ];
-
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -138,7 +123,7 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
               <Card
                 key={index}
@@ -150,26 +135,6 @@ const Index = () => {
                   </div>
                   <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
                   <p className="text-muted-foreground flex-grow">{feature.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          {/* Testimonials */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="bg-background/50 border-primary/20">
-                <CardContent className="p-8">
-                  <div className="flex mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-                  <p className="text-base mb-4 italic">"{testimonial.text}"</p>
-                  <div className="text-sm text-muted-foreground">
-                    <div className="font-semibold">{testimonial.author}</div>
-                    <div>{testimonial.location}</div>
-                  </div>
                 </CardContent>
               </Card>
             ))}
