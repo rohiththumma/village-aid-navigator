@@ -12,18 +12,21 @@ import { FeatureStats } from '@/components/features/FeatureStats';
 
 const Features = () => {
   return (
-    <div className="min-h-screen py-20">
-      <div className="container mx-auto px-4">
+    <div className="min-h-screen">
+      <div className="container mx-auto px-4 py-20">
         <FeaturesHeader />
-        <MainFeatures />
-        <UseCases />
-        <FeatureComparison />
-        <InnovativeFeatures />
-        <CommunityFeature />
-        <AdditionalFeatures />
-        <Testimonials />
-        <InteractiveDemo />
-        <FeatureStats />
+        
+        <div className="space-y-20">
+          <MainFeatures />
+          <UseCases />
+          <FeatureComparison />
+          <InnovativeFeatures />
+          <CommunityFeature />
+          <AdditionalFeatures />
+          <Testimonials />
+          <InteractiveDemo />
+          <FeatureStats />
+        </div>
       </div>
     </div>
   );
