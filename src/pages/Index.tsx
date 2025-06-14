@@ -76,27 +76,27 @@ const Index = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-b from-background to-muted/20">
-        <div className="container mx-auto px-4 py-8 lg:py-12">
-          <div className="max-w-4xl mx-auto text-center animate-in">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
+        <div className="container mx-auto px-4 py-16">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
               <span className="block">Instant Village Help,</span>
               <span className="block text-muted-foreground">Wherever You Are</span>
             </h1>
             
-            <p className="text-base md:text-lg text-muted-foreground mb-6 max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
               Your location-based guide to local emergency services. Connect with mechanics, 
               medical shops, clinics, and trusted helpers in any village.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-6">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
               <Button
                 asChild
                 size="lg"
-                className="pulse-button text-base px-6 py-3 rounded-full w-full sm:w-auto"
+                className="text-lg px-8 py-4 rounded-full"
               >
                 <Link to="/directory">
                   🚀 Launch App
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
               
@@ -104,7 +104,7 @@ const Index = () => {
                 asChild
                 variant="outline"
                 size="lg"
-                className="text-base px-6 py-3 rounded-full hover:bg-destructive hover:text-destructive-foreground hover:border-destructive transition-all duration-300 w-full sm:w-auto"
+                className="text-lg px-8 py-4 rounded-full hover:bg-destructive hover:text-destructive-foreground hover:border-destructive transition-all duration-300"
               >
                 <Link to="/emergency">
                   📞 Emergency Help Now
@@ -112,13 +112,13 @@ const Index = () => {
               </Button>
             </div>
 
-            {/* Enhanced Stats Grid */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
+            {/* Stats Grid */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
               {stats.map((stat, index) => (
-                <div key={index} className="text-center p-4 rounded-lg bg-muted/30 animate-fade-in">
-                  <stat.icon className="h-6 w-6 mx-auto mb-2 text-primary" />
-                  <div className="text-xl md:text-2xl font-bold">{stat.number}</div>
-                  <div className="text-xs md:text-sm text-muted-foreground">{stat.label}</div>
+                <div key={index} className="text-center p-6 rounded-lg bg-muted/50">
+                  <stat.icon className="h-8 w-8 mx-auto mb-3 text-primary" />
+                  <div className="text-2xl md:text-3xl font-bold mb-1">{stat.number}</div>
+                  <div className="text-sm text-muted-foreground">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -126,47 +126,47 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Enhanced Features Section */}
-      <section className="py-8 bg-muted/30">
+      {/* Features Section */}
+      <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl md:text-3xl font-bold mb-3">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Powerful Features for Every Emergency
             </h2>
-            <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Built specifically for travelers and locals who need quick access to essential services.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 stagger-in mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {features.map((feature, index) => (
               <Card
                 key={index}
-                className="group hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer h-full border-l-4 border-l-primary"
+                className="group hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer h-full"
               >
-                <CardContent className="p-4 md:p-5 h-full flex flex-col">
-                  <div className={`p-3 rounded-lg ${feature.bgColor} w-fit mb-4 group-hover:scale-110 transition-transform duration-200`}>
-                    <feature.icon className={`h-6 w-6 ${feature.color}`} />
+                <CardContent className="p-8 h-full flex flex-col">
+                  <div className={`p-4 rounded-lg ${feature.bgColor} w-fit mb-6 group-hover:scale-110 transition-transform duration-200`}>
+                    <feature.icon className={`h-8 w-8 ${feature.color}`} />
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
-                  <p className="text-muted-foreground text-sm flex-grow">{feature.description}</p>
+                  <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
+                  <p className="text-muted-foreground flex-grow">{feature.description}</p>
                 </CardContent>
               </Card>
             ))}
           </div>
 
-          {/* Quick Testimonials */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {/* Testimonials */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {testimonials.map((testimonial, index) => (
               <Card key={index} className="bg-background/50 border-primary/20">
-                <CardContent className="p-6">
-                  <div className="flex mb-3">
+                <CardContent className="p-8">
+                  <div className="flex mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                      <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
                     ))}
                   </div>
-                  <p className="text-sm mb-3 italic">"{testimonial.text}"</p>
-                  <div className="text-xs text-muted-foreground">
+                  <p className="text-base mb-4 italic">"{testimonial.text}"</p>
+                  <div className="text-sm text-muted-foreground">
                     <div className="font-semibold">{testimonial.author}</div>
                     <div>{testimonial.location}</div>
                   </div>
@@ -178,31 +178,31 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-8">
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Ready to Get Started?
             </h2>
-            <p className="text-base md:text-lg text-muted-foreground mb-6">
+            <p className="text-lg text-muted-foreground mb-8">
               Join thousands of travelers who trust Village Assistant for their emergency needs.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 asChild
                 size="lg"
-                className="text-base px-6 py-3 rounded-full w-full sm:w-auto"
+                className="text-lg px-8 py-4 rounded-full"
               >
                 <Link to="/directory">
                   Explore Directory
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
               <Button
                 asChild
                 variant="outline"
                 size="lg"
-                className="text-base px-6 py-3 rounded-full w-full sm:w-auto"
+                className="text-lg px-8 py-4 rounded-full"
               >
                 <Link to="/add-service">
                   Add Your Service
